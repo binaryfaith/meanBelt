@@ -1,0 +1,19 @@
+
+  <a href="/create">Create A New Appointment</a>
+  <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Patient Name</th>
+        <th>Complain</th>
+      </tr>
+      <tr *ngFor="let i of appointments">
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+        <td>{{ i.author.name }}</td>
+        <td>{{ i.complaint }}</td>
+        <td><button *ngIf="id==i.author._id" (click)="onDelete(i._id)">Delete</button></td>
+      </tr>
+    </table>
+    <a href="">Logout</a>
+
