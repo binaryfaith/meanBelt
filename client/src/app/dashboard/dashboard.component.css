@@ -1,0 +1,10 @@
+.bidblock{
+    display: inline-block;
+    width: 450px;
+    border-style: solid;
+}
+#wrapper{
+    display: block;
+    width: 1000px;
+    height: 800px;
+}

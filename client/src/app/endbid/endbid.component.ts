@@ -3,11 +3,11 @@ import { BidService } from './../bid.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-endbid',
+  templateUrl: './endbid.component.html',
+  styleUrls: ['./endbid.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class EndbidComponent implements OnInit {
   bids;
   id;
   product;
@@ -23,10 +23,4 @@ export class DashboardComponent implements OnInit {
       console.log(this.bids);
     })
   }
-
-  // onDelete(id) {
-  //   this._appointmentService.delete(id);
-  //   this.ngOnInit();
-  // }
-
 }

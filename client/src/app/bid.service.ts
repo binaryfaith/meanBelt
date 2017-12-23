@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class AppointmentService {
+export class BidService {
 
   constructor(private _http: Http) { }
 
-  getAllAppointments(callback){
-    this._http.get('/myappointments').subscribe(
+  getAllBids(callback){
+    this._http.get('/mybids').subscribe(
       (response) => {
         callback(response.json())
       },
@@ -15,8 +15,8 @@ export class AppointmentService {
     )
   }
 
-  delete(id) {
-    this._http.post('/delete', {id: id}).subscribe();
-  }
+  // delete(id) {
+  //   this._http.post('/delete', {id: id}).subscribe();
+  // }
 
 }

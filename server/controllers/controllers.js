@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var Appointment = mongoose.model('Appointment');
+var Bid = mongoose.model('Bid');
 
 module.exports = {
         login: function (req, res) {
@@ -29,39 +29,56 @@ module.exports = {
         },
 
         submitcreate:function(req,res){
-            var newappointment = new Appointment(req.body)
+            var newbid = new Bid(req.body)
             console.log(req.session)
-            newappointment.author = req.session.user._id
-            console.log(newappointment)
-            newappointment.save((err) => {
+            newbid.bidder = req.session.user._id
+            newbid.product = req.body.product
+            console.log(newbid)
+            newbid.save((err) => {
                 if(err){
                     return res.status(401).json(err);
                 }
                 else{
-                    console.log(`${newappointment} has been saved`)
+                    console.log(`${newbid} has been saved`)
                     res.redirect('/dashboard')
                 }
             })
         },
 
-        myappointments:function(req,res){
-            Appointment.find().populate('author').exec((err, appointments) => {
+        // submitcreate2:function(req,res){
+        //     var newbid = new Bid(req.body)
+        //     console.log(req.session)
+        //     newbid.bidder = req.session.user._id
+        //     console.log(newbid)
+        //     newbid.save((err) => {
+        //         if(err){
+        //             return res.status(401).json(err);
+        //         }
+        //         else{
+        //             console.log(`${newbid} has been saved`)
+        //             res.redirect('/dashboard')
+        //         }
+        //     })
+        // },
+
+        mybids:function(req,res){
+            Bid.find().populate('bidder').exec((err, bids) => {
                 if(err){
                     return res.status(401).json(err)
                 }
                 else{
-                   res.json({appointments:appointments,id:req.session.user._id})
+                   res.json({bids:bids,id:req.session.user._id})
                 }
             })
         },
 
-        delete: function(req, res) {
-            Appointment.remove({_id: req.body.id}, function(err){
-                if (err){
-                    console.log(err);
-                }
-            });
-        },
+        // delete: function(req, res) {
+        //     Appointment.remove({_id: req.body.id}, function(err){
+        //         if (err){
+        //             console.log(err);
+        //         }
+        //     });
+        // },
     
 
 }

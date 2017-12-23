@@ -8,8 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CreateComponent } from './create/create.component';
-import { AppointmentService } from './appointment.service';
+import { BidService } from './bid.service';
+import { EndbidComponent } from './endbid/endbid.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { AppointmentService } from './appointment.service';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CreateComponent
+    EndbidComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,7 @@ import { AppointmentService } from './appointment.service';
     FormsModule,
     HttpModule
   ],
-  providers: [AppointmentService],
+  providers: [BidService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

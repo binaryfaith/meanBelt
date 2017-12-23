@@ -7,17 +7,21 @@ module.exports = function(app) {
         controllers.login(req,res) 
     })
 
+    app.post('/endbid',(req,res)=> {
+        controllers.mybids(req,res) 
+    })
+
     app.post('/submitcreate',(req,res)=> {
         controllers.submitcreate(req,res) 
     })
 
-    app.get('/myappointments',(req,res)=>{
-        controllers.myappointments(req,res)
+    app.get('/mybids',(req,res)=>{
+        controllers.mybids(req,res)
     })
 
-    app.post('/delete',(req,res)=>{
-        controllers.delete(req,res)
-    })
+    // app.post('/delete',(req,res)=>{
+    //     controllers.delete(req,res)
+    // })
 
 
 

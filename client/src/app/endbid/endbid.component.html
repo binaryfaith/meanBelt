@@ -1,0 +1,45 @@
+
+
+  <div id="hat">
+    <img src="https://cdn.pixabay.com/photo/2017/01/12/18/00/sombrero-1975267_1280.png" alt="hat" height="100" width="100">
+  </div>
+  <table>
+      <tr>
+        <th>Bidder</th>
+        <th>Bid</th>
+      </tr>
+      <tr *ngFor="let i of bids">
+        <td *ngIf="i.product == 'hat'">{{ i.bidder.name }}</td>
+        <td *ngIf="i.product == 'hat'">{{ i.bid }}</td>
+      </tr>
+    </table>
+    <div id="cactus">
+      <img src="https://cdn.pixabay.com/photo/2013/07/13/10/53/cactus-157994_1280.png" alt="hat" height="100" width="100">
+    </div>
+    <table>
+        <tr>
+          <th>Bidder</th>
+          <th>Bid</th>
+        </tr>
+        <tr *ngFor="let i of bids">
+          <td *ngIf="i.product == 'cactus'">{{ i.bidder.name }}</td>
+          <td *ngIf="i.product == 'cactus'">{{ i.bid }}</td>
+        </tr>
+      </table>
+
+      <div id="maracas">
+        <img src="http://vignette1.wikia.nocookie.net/clubpenguin/images/3/37/Festive_Maracas_clothing_icon_ID_337.png" alt="maracas" height="100" width="100">
+      </div>
+      <table>
+          <tr>
+            <th>Bidder</th>
+            <th>Bid</th>
+          </tr>
+          <tr *ngFor="let i of bids">
+            <td *ngIf="i.product == 'maracas'">{{ i.bidder.name }}</td>
+            <td *ngIf="i.product == 'maracas'">{{ i.bid }}</td>
+          </tr>
+        </table>
+    <a href="dashboard">Dashboard</a>
+    <a href="">Logout</a>
+
